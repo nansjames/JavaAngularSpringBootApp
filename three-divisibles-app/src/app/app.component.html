@@ -1,0 +1,53 @@
+
+<div class="container bootstrap snippets bootdey">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="well search-result" >
+              <form [formGroup]="form" (ngSubmit) = "findNumberProperty()">
+                <div class="input-group">
+                    <input type="number"  min="1" max="50"ngModel name="givenNumber" formControlName='givenNumber' class="form-control" placeholder="Find">
+                    <span class="input-group-btn">
+                   <button class="btn btn-primary" type="submit" [disabled] = "form.invalid">
+                       
+                        Find
+                    </button>
+                 </span>
+                </div>
+              </form>
+            </div>
+            <div class="well search-result"  *ngIf="result===3">
+                <div class="row">
+                      <div class='box green'></div>
+                        <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                            <h3>Le nombre est divisible par 3</h3>
+                        </div>
+                </div>
+            </div>
+            <div class="well search-result" *ngIf="result===5">
+                <div class="row">
+                      <div class='box blue'></div>
+                        <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                            <h3>Le nombre est divisible par 5</h3>
+                        </div>
+                </div>
+            </div>
+            <div class="well search-result" *ngIf="result===35">
+              <div class="row">
+                    <div class='box yellow'></div>
+                      <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                          <h3>Le nombre est divisible par 3 et 5</h3>
+                      </div>
+              </div>
+          </div>
+          <div class="well search-result" *ngIf="result===0">
+            <div class="row">
+                  <div class='box red'></div>
+                    <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                        <h3>Le nombre n'est pas divisé par 3 ou 5</h3>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
